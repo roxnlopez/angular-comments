@@ -1,4 +1,6 @@
-<h1>Comments</h1>
+<h1>Leave A Comment Here!</h1>
 <ul>
-    <li *ngFor="let comment of comments">{{comment}}</li>
+  <li *ngFor="let comment of comments">{{comment.message}} -{{comment.author}}</li>
 </ul>
+<input placeholder="message"> <input placeholder="author">
+<button (click)="onSubmit()">Submit</button>

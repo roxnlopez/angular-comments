@@ -5,10 +5,17 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
+
   comments = [
-      'first comment!',
-      'nice work!',
-      'I would also like to congratulate you!'
+  	{message:'first comment!', author: 'you'},
+    {message: 'nice work!', author: 'your mom'},
+    {message: 'I would also like to congratulate you!', author: 'your dad'}
   ];
+
+  constructor() { }
+
+
 }
+
