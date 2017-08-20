@@ -1,6 +1,15 @@
 <h1>Leave A Comment Here!</h1>
 <ul>
-  <li *ngFor="let comment of comments">{{comment.message}} -{{comment.author}}</li>
+  <li *ngFor="let comment of comments; let i=index;">
+  <input *ngIf="comment.update" type="text" placeholder="quote" [(ngModel)]="updateMessage">
+  <input *ngIf="comment.update" type="text" placeholder="author" [(ngModel)]="updateAuthor">
+  {{comment.message}}--{{comment.author}}
+<button *ngIf="!comment.update" (click)="comment.update=true">Change</button>
+<button *ngIf="comment.update" (click)="onUpdate(i)" (click)="comment.update=false">Save</button>
+<button (click)="onDelete(i)">Delete</button>
 </ul>
-<input placeholder="message"> <input placeholder="author">
-<button (click)="onSubmit()">Submit</button>
+<div>
+	<input type="text" placeholder="quote" [(ngModel)]="newQuote.message">
+	<input type="text" placeholder="author" [(ngModel)]="newQuote.author">
+	<button (click)="onSubmit()">Submit</button>
+</div>
