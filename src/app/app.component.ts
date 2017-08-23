@@ -17,6 +17,7 @@ export class AppComponent {
 	updateMessage;
 	updateAuthor;
 	newQuote: quote;
+  onsubmit;
 
 	constructor() { 
 		this.newQuote = new quote();
